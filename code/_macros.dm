@@ -85,7 +85,7 @@
 
 #define FLAGS_EQUALS(flag, flags) (((flag) & (flags)) == (flags))
 
-#define IS_DIAGONAL_DIR(dir) (dir&(dir-1))
+#define IS_DIAGONAL_DIR(dir) (dir & ~(NORTH|SOUTH))
 
 // Inverse direction, taking into account UP|DOWN if necessary.
 #define REVERSE_DIR(dir) ( (((dir) & 85) << 1) | (((dir) & 170) >> 1) )
